@@ -116,7 +116,7 @@ def get_test(df: pd.DataFrame, scaler, window_size: int = 60) -> tuple:
 
 # def main(company_name="Amazon"):
 #     company_map = {"Amazon": "AMZN", "Google": "GOOGL", "Apple": "AAPL"}
-    
+
 #     df = get_data(company_map[company_name])
 #     X_train, y_train, scaler = get_train_data(df)
 #     X_test, test = get_test(df, scaler)

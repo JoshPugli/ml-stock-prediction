@@ -2,20 +2,12 @@
 
 This repository contains a machine learning-based stock prediction project created by Josh Puglielli. The project aims to predict the future prices of stocks using historical stock market data and a sequential recurrent neural network (RNN) model. 
 
-## Table of Contents
 
-- [Introduction](#introduction)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Data](#data)
-- [Models](#models)
-- [Results](#results)
-
-## Introduction {#introduction}
+## Introduction 
 
 The ML Stock Prediction project utilizes machine learning techniques to predict the future prices of stocks based on historical data. The prediction models are trained on a dataset containing historical stock market information, including opening price, closing price, highest price, lowest price, and trading volume. By analyzing these features, the models can make predictions about future stock prices, providing potential insights for investors and traders.
 
-## Installation {#installation}
+## Installation 
 
 To use this project, follow these steps:
 
@@ -33,7 +25,7 @@ To use this project, follow these steps:
 
 3. Once the dependencies are installed, you can proceed to use the project.
 
-## Usage {#usage}
+## Usage
 
 Run the pred.py script with the desired stock name as the command-line argument. The list of available stocks can be found in the /data/ folder of the repository. For example, to predict the stock prices for Apple (AAPL):
 
@@ -45,7 +37,7 @@ This command will use the pred.py script to perform stock price prediction speci
 Feel free to replace AAPL with any other stock name available in the /data/ folder of the repository. Remember to adjust the command accordingly based on your specific needs.
 
 
-## Data {#data}
+## Data 
 
 The historical stock market data used in this project is included in the repository's data folder. The dataset contains a collection of historical stock market information, including opening price, closing price, highest price, lowest price, and trading volume for various stocks.
 
@@ -57,7 +49,7 @@ You can find the data files in the following location within the repository:
 
 The script provided in this project is designed to read and process the historical stock market data from the data files, allowing you to train the prediction models and make future price predictions based on the historical information.
 
-## Models {#models}
+## Models 
 
 This project utilizes a Long Short-Term Memory (LSTM) model for stock price prediction. The LSTM model is implemented using the Keras library.
 
@@ -91,7 +83,7 @@ Once trained, the model is used to make predictions on the test data. The predic
 This LSTM model is designed to capture patterns and dependencies in the historical stock market data, enabling it to make predictions about future stock prices.
 
 
-## Results {#results}
+## Results 
 
 <div style="display:flex;">
   <img src="/figures/amazon_prediction.png" alt="Image 1" style="width:33%;">

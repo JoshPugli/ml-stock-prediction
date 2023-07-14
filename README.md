@@ -90,3 +90,5 @@ This LSTM model is designed to capture patterns and dependencies in the historic
   <img src="/figures/apple_prediction.png" alt="Image 2" style="width:33%;">
   <img src="/figures/google_prediction.png" alt="Image 3" style="width:33%;">
 </div>
+
+These are sample results from AMZN, AAPL, and GOOG stock prices. The Root Mean Squared error for each is &approx;40.

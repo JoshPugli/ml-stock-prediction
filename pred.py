@@ -2,6 +2,7 @@ from keras.layers import Dense, LSTM, Dropout
 from keras.models import Sequential
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
+import sys
 import pandas as pd
 from utils import plot, root_mean_squared_error
 
@@ -13,9 +14,13 @@ def get_data(name: str) -> pd.DataFrame:
     Returns:
         pd.DataFrame: DataFrame with 'Close' prices, indexed by date.
     """
-    df = pd.read_csv(f'./data/{name}_2006-01-01_to_2018-01-01.csv',
-                     index_col="Date", parse_dates=True)
-    df = df[["Close"]]  # Select only 'Close' price column
+    try:
+        df = pd.read_csv(f'./data/{name}_2006-01-01_to_2018-01-01.csv',
+                        index_col="Date", parse_dates=True)
+        df = df[["Close"]]  # Select only 'Close' price column
+    except:
+        print("Invalid company name. Please use a stock from the /data/ folder.")
+        sys.exit(1)
     df.sort_values(by="Date", inplace=True)
     return df
 
@@ -131,7 +136,9 @@ def get_test(df: pd.DataFrame, scaler, window_size: int = 60) -> tuple:
 
 # main()
 
-df = get_data("AAPL")
+arg1 = sys.argv[1]
+
+df = get_data(arg1)
 X_train, y_train, scaler = get_train_data(df)
 X_test, test = get_test(df, scaler)
 
@@ -140,5 +147,5 @@ model = train_model(X_train, y_train)
 predicted_stock_price = model.predict(X_test)
 predicted_stock_price = scaler.inverse_transform(predicted_stock_price)
 
-plot(test, predicted_stock_price, "Apple")
+plot(test, predicted_stock_price, arg1)
 print(root_mean_squared_error(test, predicted_stock_price))
